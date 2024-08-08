@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  config:
+    import: "optional:classpath:application-db.yml"
+
+  thymeleaf:
+    check-template-location: true  # 해당 디렉토리가 있는지 검사
+    prefix: classpath:/templates/  # .html 파일을 불러오기 위한 경로 설정
+    suffix: .html  # 파일 확장자
+    cache: false
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
