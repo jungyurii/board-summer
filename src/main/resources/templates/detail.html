@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Detail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Post Detail</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${detailBoard.title}"></h5>
+            <p class="card-text" th:text="${detailBoard.content}"></p>
+            <a th:href="@{|/edit/${detailBoard.boardId}|}" class="btn btn-warning">Edit</a>
+            <form th:action="@{|/delete/${detailBoard.boardId}|}" method="post" style="display:inline;">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+    <a href="/list" class="btn btn-secondary mt-3">Back to List</a>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+</body>
+</html>
