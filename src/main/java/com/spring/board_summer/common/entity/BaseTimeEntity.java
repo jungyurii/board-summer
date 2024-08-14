@@ -1,4 +1,4 @@
-package com.spring.board_summer.entity;
+package com.spring.board_summer.common.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @ToString
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public class BaseEntity {
+public class BaseTimeEntity {
 
     @CreatedDate
     @Column(updatable = false)
